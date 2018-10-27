@@ -1,0 +1,36 @@
+{
+  "name": "http-horse",
+  "version": "1.0.0",
+  "description": "Neigh",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "npm": "^6.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "clear; ./node_modules/.bin/istanbul cover -x 'spec/**/*' -- ./node_modules/.bin/jasmine-node --captureExceptions --verbose spec/",
+    "db:drop": "dropdb extreme_video_express",
+    "db:create": "createdb extreme_video_express",
+    "db:schema": "clear; node tasks/load_schema.js",
+    "db:seed": "clear; node tasks/seed.js",
+    "db:reset": "npm run db:drop; npm run db:create; npm run db:schema; npm run db:seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadevance/http-horse.git"
+  },
+  "keywords": [
+    "horse",
+    "http",
+    "status",
+    "codes"
+  ],
+  "author": "Jade Vance",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadevance/http-horse/issues"
+  },
+  "homepage": "https://github.com/jadevance/http-horse#readme"
+}
